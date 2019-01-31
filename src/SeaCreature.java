@@ -20,7 +20,11 @@ public class SeaCreature {
 
 	public String getName() {
 		return "My name is " + name;
+		
 	}
+
+	
+	
 
 	public void eat() {
 		System.out.println(name + " is eating krabby patties");
@@ -28,7 +32,10 @@ public class SeaCreature {
 
 	public void laugh() {
 		try {
-		    AudioClip sound = JApplet.newAudioClip(getClass().getResource(this.name + ".wav"));
+		   if(getClass().getResource(this.name + ".wav")==null) {
+			   System.out.println("Test");
+		   }
+			AudioClip sound = JApplet.newAudioClip(getClass().getResource(this.name + ".wav"));
 		    sound.play();
 			Thread.sleep(3400);
 		} catch (Exception ex) {
